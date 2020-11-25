@@ -129,7 +129,8 @@ def trip_dates(start,end):
     # Return JSON List of Min Temp, Avg Temp and Max Temp for a Given Start-End Range
     return jsonify(summary)
 
-    
+
+# Define Main Behavior    
 if __name__ == "__main__":
     app.run(port=9000, debug=True)
 
