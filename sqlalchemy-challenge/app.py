@@ -67,13 +67,10 @@ def precipitation():
 
 ## Stations Route:
 @app.route("/api/v1.0/stations")
-def station():
-        # Return a JSON List of Stations From the Dataset
-        stations_all = session.query(Station.station, Station.name).all()
-        # Convert List of Tuples Into Normal List
-        station_list = list(stations_all)
-        # Return JSON List of Stations from the Dataset
-        return jsonify(station_list)
+def stations():
+    results = session.query(Station.name).all()
+    all_stations = list(np.ravel(results))
+    return jsonify(all_stations)
 
 
 ## Temperature (tobs) Route:
